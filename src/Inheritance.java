@@ -30,6 +30,8 @@ public class Inheritance {//class parent yang mempuyai 3 field
         var gender = new kelamin();////pengaksesan object dengan kata kunci new lalu di lanjut object yang akan di akses
         gender.name = ujian.name;
         gender.jnsKelamin();
+
     }
+
 }
 
