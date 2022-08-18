@@ -2,9 +2,10 @@ package src;
 
 import java.util.Scanner;
 
-public class SuperConstructor {
+public class Super {
     /*
-    ini contoh penggunaan kata kunci super dalam variabel,yaitu kita dapat mengakses variabel yang ada di class parent dengan menggunakan kata kunci super
+    * ini sakaligus cara untk mengatasi variabel/field overridding
+    * ini contoh penggunaan kata kunci super dalam variabel,yaitu kita dapat mengakses variabel yang ada di class parent dengan menggunakan kata kunci super
      */
 static class speed{
     int maxSpeed = 120;
