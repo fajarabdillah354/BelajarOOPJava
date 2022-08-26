@@ -1,5 +1,6 @@
 package src.latihanPackage.Interface;
 
 public interface InheranceInterface {
-    String getBrand();
+    String getBrand1();
+    String getBrand2();
 }
