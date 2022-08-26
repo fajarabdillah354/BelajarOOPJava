@@ -1,0 +1,11 @@
+package src.latihanPackage.ApplicationInterface;
+
+public class TestInheImple {
+    public static void main(String[] args) {
+        InheranceImple getSome = new InheranceImple();
+        getSome.name();
+    }
+
+
+
+}
