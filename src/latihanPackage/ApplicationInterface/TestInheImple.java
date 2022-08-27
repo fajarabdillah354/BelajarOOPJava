@@ -5,6 +5,7 @@ public class TestInheImple {
         InheranceImple getSome = new InheranceImple();
         getSome.name1();
         getSome.name2();
+        getSome.name3();
     }
 
 
