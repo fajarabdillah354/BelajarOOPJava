@@ -6,6 +6,7 @@ public class TestInheImple {
         getSome.name1();
         getSome.name2();
         getSome.name3();
+        getSome.name4();
     }
 
 

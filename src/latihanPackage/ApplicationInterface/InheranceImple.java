@@ -80,6 +80,32 @@ public class InheranceImple implements Inherance1 {
     }
     public String getBrand3(){
         return "Honda";
+
+
     }
 
+    // OVERRIDE UNTUK getBrand4
+
+
+
+    public void name4() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("masukan nama mobil : ");
+        String getMobil = input.nextLine();
+        System.out.println("mobil "+getMobil+" dengan harga "+dateCar4());
+        System.out.println("brand : "+getBrand4());
+        System.out.println("QUANTITY : "+stock4());
+        System.out.println("===========================================");
+    }
+
+    public int dateCar4(){
+        int a = 470_000_000;
+        System.out.println("harga mobil : "+a);
+        return a;
+    }
+
+
+    public String getBrand4() {
+        return "Nissan";
+    }
 }
