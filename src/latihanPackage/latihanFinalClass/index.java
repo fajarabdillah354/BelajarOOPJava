@@ -12,9 +12,10 @@ public class index {
     }
 
 //ini akan error karna class quantity adalah final jadi tidak bisa diturunkan
-    
+
+    /*
      class brand extends quantity{
 
     }
-
+    */
 }

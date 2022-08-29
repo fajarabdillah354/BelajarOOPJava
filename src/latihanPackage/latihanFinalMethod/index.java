@@ -10,8 +10,11 @@ public class index {
     di bawah ini akan error sebab method makanan adalah final jadi tidakk bisa di override lagi
      */
     class bentuk extends index{
+        /*
         void makanan(String name){
 
         }
+
+         */
     }
 }
