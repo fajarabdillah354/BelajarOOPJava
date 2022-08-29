@@ -1,0 +1,3 @@
+toString digunakan untuk merepresentasikan suatu object menjadi sebuah String
+seperti yang ada di contoh berikut:
+file : Produk dan file GetProduk
