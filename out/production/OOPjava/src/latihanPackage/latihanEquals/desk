@@ -1,0 +1,2 @@
+equals() digunakan untuk melakukan perbadingan antara 2 object secara kesamaan posisi object di memori
+ada baiknya kita mengoverride method equals milik class object
