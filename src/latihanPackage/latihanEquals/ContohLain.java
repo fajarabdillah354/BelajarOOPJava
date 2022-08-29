@@ -26,4 +26,5 @@ public class ContohLain {
     public int hashCode() {
         return Objects.hash(name, umur);
     }
+
 }
