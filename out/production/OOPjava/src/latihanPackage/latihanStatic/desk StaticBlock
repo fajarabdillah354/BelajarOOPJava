@@ -1,0 +1,3 @@
+ketika menggunakan static block kita harus instansiasi variabel yang pertama(di beri value)
+untuk pengaksesan tinggal perintah print lalu nama object . nama variabel yang telah di instansiasi
+nb : kita tidak perlu menginstansiasi object nya dengan menggunakan new

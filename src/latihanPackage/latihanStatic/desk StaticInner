@@ -1,0 +1,5 @@
+kita dapat membuaat static di dalam inner class kita ,sehingga tidak mengharuskan kita mengakses object outer classnya
+saat menggunakan static inner class secara otomatis field yang ada di outer class tidak bisa kita akses
+cara mengakses static inner
+ <namaOuterClass.nameStaticInner> var = new <namaOuterClass.nameStaticInner()> ;
+ var.<namaMethod()> ; 
