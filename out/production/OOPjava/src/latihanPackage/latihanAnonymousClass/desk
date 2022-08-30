@@ -1,0 +1,11 @@
+anonymous class adalah sebuah class tanpa nama yang dapat di akses objectnya dengan secara langsung
+saat menggunakan interface kita tidak perlu menggunakan implements dalam classnya,kita dapat langgsung instansi
+ex:
+BahanBakar pertalite = new BahanBakar(){
+
+};
+1. BahanBakar adalah nama interface atau nama outer classnya
+2. pertalite adalah nama variabel
+3. new BahanBakar(){
+};
+adalah pengaksesan object BahanBakar,jangan lupa di beri kurung kurawal sebagai identitas sebagai dari anonymous class
