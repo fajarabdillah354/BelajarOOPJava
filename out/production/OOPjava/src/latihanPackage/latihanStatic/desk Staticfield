@@ -1,0 +1,3 @@
+ketika kita membuat static field kita dapat mengakses tanpa mengakses objectnya(bisa dengan cara langsung)
+dalam artian tidak perlu menuliskan new <nama object>
+hanya tinggal menuliskan nama class objectnya lalu di ikuti dengan titik lalu pilih field yang telah kita buat
