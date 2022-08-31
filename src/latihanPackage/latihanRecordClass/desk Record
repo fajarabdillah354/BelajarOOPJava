@@ -1,0 +1,5 @@
+*saat membuat class record kita akan di perintah mengisi parameter
+*parameter yang ada bertipe Final sehingga kita tidak bisa mngubahnya kembali
+*jika kita ini membuat sebuah constructor baru maka kita wajib memanggil constructor yang utama dengan kata kunci this(param)
+*parameter yang ada di class recor utama bisa digunakan menjadi field
+*bagi constructor tanpa kurung kembung akan selalu di eksekusi saat program di jalankan
