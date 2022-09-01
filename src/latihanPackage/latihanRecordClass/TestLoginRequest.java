@@ -21,6 +21,7 @@ public record TestLoginRequest(String Id,String password) {
     }
 
     public TestLoginRequest(){
+
         this(null,null);//constructor utama tetap di panggil
     }
 }
