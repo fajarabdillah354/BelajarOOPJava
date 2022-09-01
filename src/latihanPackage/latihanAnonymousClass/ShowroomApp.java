@@ -1,15 +1,89 @@
 package src.latihanPackage.latihanAnonymousClass;
 
+
+import src.latihanPackage.latihanExcaption.ValidationExcaption;
+import src.latihanPackage.latihanExcaption.ValidationUtil;
+
+
 import java.util.Scanner;
 
 public class ShowroomApp {
+
+    private String username;
+    private String password;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    /*
+        constructor username dan password
+         */
+    public ShowroomApp(String username,String password){
+        this.username = username;
+        this.password = password;
+    }
+
+//    static void BRI(){
+//        ShowroomApp nasabah = new ShowroomApp("","");
+//        try {
+//            ValidationUtil.validateNasabah(nasabah);
+//            System.out.println("DATA ACCEPT");
+//        }catch (ValidationExcaption | NullPointerException excaption){
+//            System.out.println("DATA ERROR : "+excaption.getMessage());
+//        }
+//    }
+
+    public static void kuponBayar(){
+
+        ShowroomApp nasabah = new ShowroomApp("fajar","fahmifadilah25");
+        try {
+            ValidationUtil.validateNasabah(nasabah);
+            System.out.println("DATA ACCEPT");
+            System.out.println("KUPON ANDA BERHASIL DI PAKAI");
+            System.out.println("SELAMAT PEMBELIAN ANDA BERHASIL");
+        }catch (ValidationExcaption | NullPointerException excaption){
+            System.out.println("DATA ERROR : "+excaption.getMessage());
+        }
+    }
+    /*
+    test validation
+
+    static class test{
+        public static void main(String[] args) {
+            ShowroomApp nasabah = new ShowroomApp("","");
+            try {
+                ValidationUtil.validateNasabah(nasabah);
+                System.out.println("DATA ACCEPT");
+            }catch (ValidationExcaption | NullPointerException excaption){
+                System.out.println("DATA ERROR : "+excaption.getMessage());
+            }
+        }
+    }
+    */
+
+
+
+
 
 /*
 FUNCTION UNTUK PEMBAYARAN AGYA
  */
     static String pembayaranAgya(){
         Scanner input =new Scanner(System.in);
-        System.out.print("silahkan pilih metode pembayaran (cash/kredit) : ");
+        System.out.print("silahkan pilih jenis pembayaran (cash/kredit) : ");
         String bayar = input.nextLine();
         if (bayar.equals("cash")){
             var price = 170_000_000;
@@ -17,8 +91,12 @@ FUNCTION UNTUK PEMBAYARAN AGYA
             System.out.print("KETIK DEAL UNTUK MEMBELI NO UNTUK KEMBALI: ");
             String beli = input.nextLine();
             if (beli.equals("DEAL")){
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
                 System.out.println("Selamat anda telah membeli mobil Agya");
             } else if (beli.equals("deal")) {
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
                 System.out.println("Selamat anda telah membeli mobil Agya");
             } else if (beli.equals("no")) {
                 Toyota();
@@ -28,7 +106,40 @@ FUNCTION UNTUK PEMBAYARAN AGYA
                 System.out.println("terimakasih telah mengunjungi Showroom kami");
             }
 
+        } else if (bayar.equals("CASH")) {
+            var price = 170_000_000;
+            System.out.println("nominal yang anda harus bayar : "+price);
+            System.out.print("KETIK DEAL UNTUK MEMBELI NO UNTUK KEMBALI: ");
+            String beli = input.nextLine();
+            if (beli.equals("DEAL")){
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
+                System.out.println("Selamat anda telah membeli mobil Agya");
+            } else if (beli.equals("deal")) {
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
+                System.out.println("Selamat anda telah membeli mobil Agya");
+            } else if (beli.equals("no")) {
+                Toyota();
+            } else if (beli.equals("NO")) {
+                Toyota();
+            } else{
+                System.out.println("terimakasih telah mengunjungi Showroom kami");
+            }
         } else if (bayar.equals("kredit")) {
+            String[] kredit = {
+                    "6 bulan",
+                    "12 bulan",
+                    "15 bulan",
+                    "20 bulan",
+                    "30 bulan"
+
+                };
+            System.out.println("==== berikut adalah rincian kredit ====");
+            for (var i = 0; i < kredit.length; i++) {
+                System.out.println((i+1)+". "+kredit[i]);
+            }
+        } else if (bayar.equals("KREDIT")) {
             String[] kredit = {
                     "6 bulan",
                     "12 bulan",
@@ -52,7 +163,7 @@ FUNCTION UNTUK PEMBAYARAN AVANZA
 
     static String pembayaranAvanza(){
         Scanner input =new Scanner(System.in);
-        System.out.print("silahkan pilih metode pembayaran (cash/kredit) : ");
+        System.out.print("silahkan pilih jenis pembayaran (cash/kredit) : ");
         String bayar = input.nextLine();
         if (bayar.equals("cash")){
             var price = 167_000_000;
@@ -60,17 +171,54 @@ FUNCTION UNTUK PEMBAYARAN AVANZA
             System.out.print("KETIK DEAL UNTUK MEMBELI NO UNTUK KEMBALI : ");
             String beli = input.nextLine();
             if (beli.equals("DEAL")){
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
                 System.out.println("Selamat anda telah membeli mobil Avanza");
             } else if (beli.equals("no")) {
                 Toyota();
             } else if (beli.equals("NO")) {
                 Toyota();
             } else if (beli.equals("deal")) {
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
                 System.out.println("Selamat anda telah membeli mobil Avanza");
             } else {
                 System.out.println("terimakasih telah mengunjungi Showroom kami");
             }
 
+        } else if (bayar.equals("CASH")) {
+            var price = 167_000_000;
+            System.out.println("nominal yang anda harus bayar : "+price);
+            System.out.print("KETIK DEAL UNTUK MEMBELI NO UNTUK KEMBALI : ");
+            String beli = input.nextLine();
+            if (beli.equals("DEAL")){
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
+                System.out.println("Selamat anda telah membeli mobil Avanza");
+            } else if (beli.equals("no")) {
+                Toyota();
+            } else if (beli.equals("NO")) {
+                Toyota();
+            } else if (beli.equals("deal")) {
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
+                System.out.println("Selamat anda telah membeli mobil Avanza");
+            } else {
+                System.out.println("terimakasih telah mengunjungi Showroom kami");
+            }
+        } else if (bayar.equals("KREDIT")) {
+            String[] kredit = {
+                    "6 bulan",
+                    "12 bulan",
+                    "15 bulan",
+                    "20 bulan",
+                    "30 bulan"
+
+            };
+            System.out.println("==== berikut adalah rincian kredit ====");
+            for (var i = 0; i < kredit.length; i++) {
+                System.out.println((i+1)+". "+kredit[i]);
+            }
         } else if (bayar.equals("kredit")) {
             String[] kredit = {
                     "6 bulan",
@@ -95,7 +243,7 @@ FUNCTION UNTUK PEMBAYARAN AYLA
 
     static String pembayaranAyla(){
         Scanner input =new Scanner(System.in);
-        System.out.print("silahkan pilih metode pembayaran (cash/kredit) : ");
+        System.out.print("silahkan pilih jenis pembayaran (cash/kredit) : ");
         String bayar = input.nextLine();
         if (bayar.equals("cash")){
             var price = 150_000_000;
@@ -103,17 +251,54 @@ FUNCTION UNTUK PEMBAYARAN AYLA
             System.out.print("KETIK DEAL UNTUK MEMBELI NO UNTUK KEMBALI : ");
             String beli = input.nextLine();
             if (beli.equals("DEAL")){
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
                 System.out.println("Selamat anda telah membeli mobil Ayla");
             } else if (beli.equals("no")) {
                 Toyota();
             } else if (beli.equals("NO")) {
                 Toyota();
             } else if (beli.equals("deal")) {
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
                 System.out.println("Selamat anda telah membeli mobil Ayla");
             } else {
                 System.out.println("terimakasih telah mengunjungi Showroom kami");
             }
 
+        } else if (bayar.equals("CASH")) {
+            var price = 150_000_000;
+            System.out.println("nominal yang anda harus bayar : "+price);
+            System.out.print("KETIK DEAL UNTUK MEMBELI NO UNTUK KEMBALI : ");
+            String beli = input.nextLine();
+            if (beli.equals("DEAL")){
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
+                System.out.println("Selamat anda telah membeli mobil Ayla");
+            } else if (beli.equals("no")) {
+                Toyota();
+            } else if (beli.equals("NO")) {
+                Toyota();
+            } else if (beli.equals("deal")) {
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
+                System.out.println("Selamat anda telah membeli mobil Ayla");
+            } else {
+                System.out.println("terimakasih telah mengunjungi Showroom kami");
+            }
+        } else if (bayar.equals("KREDIT")) {
+            String[] kredit = {
+                    "6 bulan",
+                    "12 bulan",
+                    "15 bulan",
+                    "20 bulan",
+                    "30 bulan"
+
+            };
+            System.out.println("==== berikut adalah rincian kredit ====");
+            for (var i = 0; i < kredit.length; i++) {
+                System.out.println((i+1)+". "+kredit[i]);
+            }
         } else if (bayar.equals("kredit")) {
             String[] kredit = {
                     "6 bulan",
@@ -139,7 +324,7 @@ FUCNTION PEMBAYARAN RUSH
 
     static String pembayaranRush(){
         Scanner input =new Scanner(System.in);
-        System.out.print("silahkan pilih metode pembayaran (cash/kredit) : ");
+        System.out.print("silahkan pilih jenis pembayaran (cash/kredit) : ");
         String bayar = input.nextLine();
         if (bayar.equals("cash")){
             var price = 261_000_000;
@@ -147,17 +332,35 @@ FUCNTION PEMBAYARAN RUSH
             System.out.print("KETIK DEAL UNTUK MEMBELI NO UNTUK KEMBALI : ");
             String beli = input.nextLine();
             if (beli.equals("DEAL")){
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
                 System.out.println("Selamat anda telah membeli mobil Rush");
-            } else if (beli.equals("deal")) {
+                } else if (beli.equals("deal")) {
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
                 System.out.println("Selamat anda telah membeli mobil Rush");
-            } else if (beli.equals("NO")) {
+                } else if (beli.equals("NO")) {
                 Toyota();
-            } else if (beli.equals("no")) {
+                } else if (beli.equals("no")) {
                 Toyota();
-            } else {
+                } else {
                 System.out.println("terimakasih telah mengunjungi Showroom kami");
             }
 
+        }
+        else if (bayar.equals("KREDIT")) {
+            String[] kredit = {
+                    "6 bulan",
+                    "12 bulan",
+                    "15 bulan",
+                    "20 bulan",
+                    "30 bulan"
+
+            };
+            System.out.println("==== berikut adalah rincian kredit ====");
+            for (var i = 0; i < kredit.length; i++) {
+                System.out.println((i+1)+". "+kredit[i]);
+            }
         } else if (bayar.equals("kredit")) {
             String[] kredit = {
                     "6 bulan",
@@ -171,6 +374,26 @@ FUCNTION PEMBAYARAN RUSH
             for (var i = 0; i < kredit.length; i++) {
                 System.out.println((i+1)+". "+kredit[i]);
             }
+        } else if (bayar.equals("CASH")) {
+            var price = 261_000_000;
+            System.out.println("nominal yang anda harus bayar : "+price);
+            System.out.print("KETIK DEAL UNTUK MEMBELI NO UNTUK KEMBALI : ");
+            String beli = input.nextLine();
+            if (beli.equals("DEAL")){
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
+                System.out.println("Selamat anda telah membeli mobil Rush");
+            } else if (beli.equals("deal")) {
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
+                System.out.println("Selamat anda telah membeli mobil Rush");
+            } else if (beli.equals("NO")) {
+                Toyota();
+            } else if (beli.equals("no")) {
+                Toyota();
+            } else {
+                System.out.println("terimakasih telah mengunjungi Showroom kami");
+            }
         }
         return "terimakasih  ";
     }
@@ -182,7 +405,7 @@ FUNCTION UNTUK PEMBAYARAN FREED
 
     static String pembayaranFreed(){
         Scanner input =new Scanner(System.in);
-        System.out.print("silahkan pilih metode pembayaran (cash/kredit) : ");
+        System.out.print("silahkan pilih jenis pembayaran (cash/kredit) : ");
         String bayar = input.nextLine();
         if (bayar.equals("cash")){
             var price = 258_000_000;
@@ -190,8 +413,12 @@ FUNCTION UNTUK PEMBAYARAN FREED
             System.out.print("KETIK DEAL UNTUK MEMBELI NO UNTUK KEMBALI : ");
             String beli = input.nextLine();
             if (beli.equals("DEAL")){
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
                 System.out.println("Selamat anda telah membeli mobil Freed");
             } else if (beli.equals("deal")) {
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
                 System.out.println("Selamat anda telah membeli mobil Freed");
             } else if (beli.equals("NO")) {
                 Toyota();
@@ -201,6 +428,39 @@ FUNCTION UNTUK PEMBAYARAN FREED
                 System.out.println("terimakasih telah mengunjungi Showroom kami");
             }
 
+        } else if (bayar.equals("CASH")) {
+            var price = 258_000_000;
+            System.out.println("nominal yang anda harus bayar : "+price);
+            System.out.print("KETIK DEAL UNTUK MEMBELI NO UNTUK KEMBALI : ");
+            String beli = input.nextLine();
+            if (beli.equals("DEAL")){
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
+                System.out.println("Selamat anda telah membeli mobil Freed");
+            } else if (beli.equals("deal")) {
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
+                System.out.println("Selamat anda telah membeli mobil Freed");
+            } else if (beli.equals("NO")) {
+                Toyota();
+            } else if (beli.equals("no")) {
+                Toyota();
+            } else {
+                System.out.println("terimakasih telah mengunjungi Showroom kami");
+            }
+        } else if (bayar.equals("KREDIT")) {
+            String[] kredit = {
+                    "6 bulan",
+                    "12 bulan",
+                    "15 bulan",
+                    "20 bulan",
+                    "30 bulan"
+
+            };
+            System.out.println("==== berikut adalah rincian kredit ====");
+            for (var i = 0; i < kredit.length; i++) {
+                System.out.println((i+1)+". "+kredit[i]);
+            }
         } else if (bayar.equals("kredit")) {
             String[] kredit = {
                 "6 bulan",
@@ -225,7 +485,7 @@ FUNCTION PEMBAYARAN RAIZE
 
     static String pembayaranRaize(){
         Scanner input =new Scanner(System.in);
-        System.out.print("silahkan pilih metode pembayaran (cash/kredit) : ");
+        System.out.print("silahkan pilih jenis pembayaran (cash/kredit) : ");
         String bayar = input.nextLine();
         if (bayar.equals("cash")){
             var price = 275_000_000;
@@ -233,8 +493,12 @@ FUNCTION PEMBAYARAN RAIZE
             System.out.print("KETIK DEAL UNTUK MEMBELI NO UNTUK KEMBALI : ");
             String beli = input.nextLine();
             if (beli.equals("DEAL")){
+                System.out.println("METODE PEMBAYARAN MELALUI");
+                kuponBayar();
                 System.out.println("Selamat anda telah membeli mobil Raize");
             } else if (beli.equals("deal")) {
+                System.out.println("METODE PEMBAYARAN MELALUI");
+                kuponBayar();
                 System.out.println("Selamat anda telah membeli mobil Raize");
             } else if (beli.equals("NO")) {
                 Toyota();
@@ -244,6 +508,39 @@ FUNCTION PEMBAYARAN RAIZE
                 System.out.println("terimakasih telah mengunjungi Showroom kami");
             }
 
+        } else if (bayar.equals("CASH")) {
+            var price = 275_000_000;
+            System.out.println("nominal yang anda harus bayar : "+price);
+            System.out.print("KETIK DEAL UNTUK MEMBELI NO UNTUK KEMBALI : ");
+            String beli = input.nextLine();
+            if (beli.equals("DEAL")){
+                System.out.println("METODE PEMBAYARAN MELALUI");
+                kuponBayar();
+                System.out.println("Selamat anda telah membeli mobil Raize");
+            } else if (beli.equals("deal")) {
+                System.out.println("METODE PEMBAYARAN MELALUI");
+                kuponBayar();
+                System.out.println("Selamat anda telah membeli mobil Raize");
+            } else if (beli.equals("NO")) {
+                Toyota();
+            } else if (beli.equals("no")) {
+                Toyota();
+            } else {
+                System.out.println("terimakasih telah mengunjungi Showroom kami");
+            }
+        } else if (bayar.equals("KREDIT")) {
+            String[] kredit = {
+                    "6 bulan",
+                    "12 bulan",
+                    "15 bulan",
+                    "20 bulan",
+                    "30 bulan"
+
+            };
+            System.out.println("==== berikut adalah rincian kredit ====");
+            for (var i = 0; i < kredit.length; i++) {
+                System.out.println((i+1)+". "+kredit[i]);
+            }
         } else if (bayar.equals("kredit")) {
             String[] kredit = {
                     "6 bulan",
@@ -267,7 +564,7 @@ FUNCTION PEMBAYARAN RAIZE
      */
     static String pembayaranFortuner(){
         Scanner input =new Scanner(System.in);
-        System.out.print("silahkan pilih metode pembayaran (cash/kredit) : ");
+        System.out.print("silahkan pilih jenis pembayaran (cash/kredit) : ");
         String bayar = input.nextLine();
         if (bayar.equals("cash")){
             var price = 564_000_000;
@@ -275,8 +572,12 @@ FUNCTION PEMBAYARAN RAIZE
             System.out.print("KETIK DEAL UNTUK MEMBELI NO UNTUK KEMBALI : ");
             String beli = input.nextLine();
             if (beli.equals("DEAL")){
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
                 System.out.println("Selamat anda telah membeli mobil Fortuner");
             } else if (beli.equals("deal")) {
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
                 System.out.println("Selamat anda telah membeli mobil Fortuner");
             } else if (beli.equals("NO")) {
                 Toyota();
@@ -286,6 +587,39 @@ FUNCTION PEMBAYARAN RAIZE
                 System.out.println("terimakasih telah mengunjungi Showroom kami");
             }
 
+        } else if (bayar.equals("CASH")) {
+            var price = 564_000_000;
+            System.out.println("nominal yang anda harus bayar : "+price);
+            System.out.print("KETIK DEAL UNTUK MEMBELI NO UNTUK KEMBALI : ");
+            String beli = input.nextLine();
+            if (beli.equals("DEAL")){
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
+                System.out.println("Selamat anda telah membeli mobil Fortuner");
+            } else if (beli.equals("deal")) {
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
+                System.out.println("Selamat anda telah membeli mobil Fortuner");
+            } else if (beli.equals("NO")) {
+                Toyota();
+            } else if (beli.equals("no")) {
+                Toyota();
+            } else {
+                System.out.println("terimakasih telah mengunjungi Showroom kami");
+            }
+        } else if (bayar.equals("KREDIT")) {
+            String[] kredit = {
+                    "6 bulan",
+                    "12 bulan",
+                    "15 bulan",
+                    "20 bulan",
+                    "30 bulan"
+
+            };
+            System.out.println("==== berikut adalah rincian kredit ====");
+            for (var i = 0; i < kredit.length; i++) {
+                System.out.println((i+1)+". "+kredit[i]);
+            }
         } else if (bayar.equals("kredit")) {
             String[] kredit = {
                     "6 bulan",
@@ -310,7 +644,7 @@ FUNCTION PEMBAYARAN RAIZE
 
     static String pembayaranVoxy(){
         Scanner input =new Scanner(System.in);
-        System.out.print("silahkan pilih metode pembayaran (cash/kredit) : ");
+        System.out.print("silahkan pilih jenis pembayaran (cash/kredit) : ");
         String bayar = input.nextLine();
         if (bayar.equals("cash")){
             var price = 575_000_000;
@@ -318,8 +652,12 @@ FUNCTION PEMBAYARAN RAIZE
             System.out.print("KETIK DEAL UNTUK MEMBELI NO UNTUK KEMBALI : ");
             String beli = input.nextLine();
             if (beli.equals("DEAL")){
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
                 System.out.println("Selamat anda telah membeli mobil Voxy");
             } else if (beli.equals("deal")) {
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
                 System.out.println("Selamat anda telah membeli mobil Voxy");
             } else if (beli.equals("NO")) {
                 Toyota();
@@ -329,6 +667,39 @@ FUNCTION PEMBAYARAN RAIZE
                 System.out.println("terimakasih telah mengunjungi Showroom kami");
             }
 
+        } else if (bayar.equals("CASH")) {
+            var price = 575_000_000;
+            System.out.println("nominal yang anda harus bayar : "+price);
+            System.out.print("KETIK DEAL UNTUK MEMBELI NO UNTUK KEMBALI : ");
+            String beli = input.nextLine();
+            if (beli.equals("DEAL")){
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
+                System.out.println("Selamat anda telah membeli mobil Voxy");
+            } else if (beli.equals("deal")) {
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
+                System.out.println("Selamat anda telah membeli mobil Voxy");
+            } else if (beli.equals("NO")) {
+                Toyota();
+            } else if (beli.equals("no")) {
+                Toyota();
+            } else {
+                System.out.println("terimakasih telah mengunjungi Showroom kami");
+            }
+        } else if (bayar.equals("KREDIT")) {
+            String[] kredit = {
+                    "6 bulan",
+                    "12 bulan",
+                    "15 bulan",
+                    "20 bulan",
+                    "30 bulan"
+
+            };
+            System.out.println("==== berikut adalah rincian kredit ====");
+            for (var i = 0; i < kredit.length; i++) {
+                System.out.println((i+1)+". "+kredit[i]);
+            }
         } else if (bayar.equals("kredit")) {
             String[] kredit = {
                     "6 bulan",
@@ -351,7 +722,7 @@ FUNCTION PEMBAYARAN RAIZE
      */
     static String pembayaranHarrier(){
         Scanner input =new Scanner(System.in);
-        System.out.print("silahkan pilih metode pembayaran (cash/kredit) : ");
+        System.out.print("silahkan pilih jenis pembayaran (cash/kredit) : ");
         String bayar = input.nextLine();
         if (bayar.equals("cash")){
             var price = 580_000_000;
@@ -359,8 +730,12 @@ FUNCTION PEMBAYARAN RAIZE
             System.out.print("KETIK DEAL UNTUK MEMBELI NO UNTUK KEMBALI : ");
             String beli = input.nextLine();
             if (beli.equals("DEAL")){
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
                 System.out.println("Selamat anda telah membeli mobil Harrier");
             } else if (beli.equals("deal")) {
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
                 System.out.println("Selamat anda telah membeli mobil Harrier");
             } else if (beli.equals("NO")) {
                 Toyota();
@@ -370,6 +745,39 @@ FUNCTION PEMBAYARAN RAIZE
                 System.out.println("terimakasih telah mengunjungi Showroom kami");
             }
 
+        } else if (bayar.equals("CASH")) {
+            var price = 580_000_000;
+            System.out.println("nominal yang anda harus bayar : "+price);
+            System.out.print("KETIK DEAL UNTUK MEMBELI NO UNTUK KEMBALI : ");
+            String beli = input.nextLine();
+            if (beli.equals("DEAL")){
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
+                System.out.println("Selamat anda telah membeli mobil Harrier");
+            } else if (beli.equals("deal")) {
+                System.out.println("METODE PEMBAYARAN MELALUI KUPON");
+                kuponBayar();
+                System.out.println("Selamat anda telah membeli mobil Harrier");
+            } else if (beli.equals("NO")) {
+                Toyota();
+            } else if (beli.equals("no")) {
+                Toyota();
+            } else {
+                System.out.println("terimakasih telah mengunjungi Showroom kami");
+            }
+        } else if (bayar.equals("KREDIT")) {
+            String[] kredit = {
+                    "6 bulan",
+                    "12 bulan",
+                    "15 bulan",
+                    "20 bulan",
+                    "30 bulan"
+
+            };
+            System.out.println("==== berikut adalah rincian kredit ====");
+            for (var i = 0; i < kredit.length; i++) {
+                System.out.println((i+1)+". "+kredit[i]);
+            }
         } else if (bayar.equals("kredit")) {
             String[] kredit = {
                     "6 bulan",
@@ -419,7 +827,7 @@ FUNCTION PEMBAYARAN RAIZE
             }
 
 
-        } else if (inputHarga>=200_000_000 && inputHarga<=500_000_000) {
+        } else if (inputHarga>200_000_000 & inputHarga<500_000_000) {
             System.out.println("==== BERIKUT MOBIL YANG TERSEDIA UNTUK KISARAN HARGA YANG ANDA INGINKAN ==== ");
             String[] daftarMobil = {
                     "Rush","Freed","Raize"
@@ -438,7 +846,7 @@ FUNCTION PEMBAYARAN RAIZE
             }else {
                 System.out.println("!!!! MOBIL TIDAK TERSEDIA !!!!");
             }
-        } else if (inputHarga<=500_000_000 && inputHarga<=700_000_000 ) {
+        } else if (inputHarga>500_000_000 & inputHarga<=700_000_000 ) {
             System.out.println("==== BERIKUT MOBIL YANG TERSEDIA UNTUK KISARAN HARGA YANG ANDA INGINKAN ==== ");
             String[] daftarMobil = {
                     "Fortuner","Voxy","Harrier"
