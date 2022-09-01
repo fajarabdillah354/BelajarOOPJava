@@ -1,0 +1,17 @@
+* Enum class digunakan untuk data yang terbatas
+
+* dalam enum class kita dapat mengisi beberapa member
+
+* untuk mengakses class enum kita perlu class baru untuk meletakatan tipe data class enum dan varnya
+
+* kita bisa melakukan getter setter pada class yang digunakan untuk akses enum
+
+* untuk pengaksesan
+<NAMA CLASS akses ENUM> var(x) = new <NAMA CLASS akses ENUM>;
+
+* untuk pengaksesan constructor di enum
+var(x).getter&setter().getter&setterConstructor();
+
+* saat membuat constructor kita juga harus menginstansi di isi ENUM
+ex:
+EASY(isi disini)....nb : isi sesuai dengan tipe datanya
