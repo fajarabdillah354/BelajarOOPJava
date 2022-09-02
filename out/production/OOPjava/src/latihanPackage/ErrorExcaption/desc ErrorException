@@ -1,0 +1,4 @@
+* penggunaan tipe error ini sangat di peruntukan untuk tipe error yang fatal
+
+* saat menggunakan ErrorException tidak di recomend untuk di tangkap melalu try - catch.jika ini di tangkap sebaiknya menggunakan RuntimeException saja
+
