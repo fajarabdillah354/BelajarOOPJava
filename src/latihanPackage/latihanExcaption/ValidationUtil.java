@@ -27,6 +27,20 @@ public class ValidationUtil {
         }
     }
 
+    /*
+    ini untuk error RuntimeExcaption
+     */
+    public static void RunTimeExcaption(LoginRequest loginRequest){
+        if (loginRequest.getUsername() == null){
+            throw new RuntimeException("username tidak boleh null");
+        } else if (loginRequest.getUsername().isBlank()) {
+            throw new RuntimeException("username tidak boleh kosong");
+        } else if (loginRequest.getPassword() == null) {
+            throw new RuntimeException("password tidak boleh null");
+        } else if (loginRequest.getPassword().isBlank()) {
+            throw new RuntimeException("password tidak boleh kosong");
+        }
+    }
 
 
 }
