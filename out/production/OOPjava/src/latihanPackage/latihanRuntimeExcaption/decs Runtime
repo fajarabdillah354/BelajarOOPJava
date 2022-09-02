@@ -1,0 +1,6 @@
+* saat error runtime terjadi maka akan ada tulisan merah dan akan ada perintah throw new yang sudah kita tulis serta letak kesalahan yang ada
+
+* kita harus membuat class yang extends ke RuntimeExcaption
+
+* dalam RuntimeExcaption kita dapat menuliskan try - catch jika kita mau
+
