@@ -4,7 +4,7 @@ import src.latihanPackage.latihanExcaption.LoginRequest;
 
 public class ErrorApp {
     public static void main(String[] args) {
-        connectDataBase("fajar",null);
+        connectDataBase("fajar","ujeeehh");
     }
     public static void connectDataBase(String username,String password){
         if (username == null || password == null){

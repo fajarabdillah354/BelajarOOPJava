@@ -1,6 +1,8 @@
 package src.latihanPackage.latihanAnonymousClass;
 
-public class RuntimeDiscount extends RuntimeException {
+import java.util.Scanner;
+
+public class RuntimeDiscount extends Error {
     public RuntimeDiscount(String message){
         super(message);
     }
@@ -14,15 +16,23 @@ public class RuntimeDiscount extends RuntimeException {
         }
     }
 
-    static class testValidate{
-        public static void main(String[] args) {
-            RunValidate kode = new RunValidate("GNS354");
-            RuntimeDiscount.runValidate(kode);
-            try{
-                System.out.println("SELAMAT KODE ANDA BERHASIL ");
-            }catch (RuntimeException runtimeException){
-                System.out.println("error : "+runtimeException.getMessage());
+    public static class testValidate{
+
+        public static void kuponDiscount(){
+            Scanner input = new Scanner(System.in);
+            System.out.print("Masukan kode discount : ");
+            String inputDiscount = input.nextLine();
+            if (inputDiscount == null || inputDiscount == "" ){
+                throw new RuntimeDiscount("KODE ANDA DI TOLAK!!!!");
+            } else if (inputDiscount.equals("GNS354")) {
+                System.out.println("KODE SUKSES");
+            }else {
+                throw new RuntimeDiscount("KODE TIDAK TERSEDIA");
+
             }
         }
+
+
+
     }
 }
