@@ -1,0 +1,4 @@
+pada java 7 terdapat file baru yang bernama try with resource
+ini mempermudah kita menggunakan resource yang wajib di close apabila sudah digunakan
+sebelum menggunakan fitur ini kita wajib meng interface auto closeable
+class yang dipakai untuk membaca file adalah BufferedReader
