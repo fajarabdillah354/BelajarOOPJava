@@ -1,50 +1,11 @@
 package src.latihanPackage.latihanAnonymousClass;
 
 
-import src.latihanPackage.latihanExcaption.ValidationExcaption;
-import src.latihanPackage.latihanExcaption.ValidationUtil;
-
 
 import java.util.Scanner;
 
 public class ShowroomApp {
 
-    private String username;
-    private String password;
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    /*
-        constructor username dan password
-         */
-    public ShowroomApp(String username,String password){
-        this.username = username;
-        this.password = password;
-    }
-
-//    static void BRI(){
-//        ShowroomApp nasabah = new ShowroomApp("","");
-//        try {
-//            ValidationUtil.validateNasabah(nasabah);
-//            System.out.println("DATA ACCEPT");
-//        }catch (ValidationExcaption | NullPointerException excaption){
-//            System.out.println("DATA ERROR : "+excaption.getMessage());
-//        }
-//    }
     public static void BRI(){
         Scanner inputSaldo = new Scanner(System.in);
         System.out.print("Masukan nominal : ");
@@ -107,7 +68,7 @@ public class ShowroomApp {
         Scanner input = new Scanner(System.in);
         System.out.print("MASUKAN KODE BANK YANG DITUJU : ");
         String inputDiscount = input.nextLine();
-        if (inputDiscount == null || inputDiscount == "" ){
+        if (inputDiscount == null || inputDiscount.equals(" ") ){
             throw new RuntimeDiscount("KODE ANDA DI TOLAK!!!!");
         } else if (inputDiscount.equals("GNS354")) {
             System.out.println("KODE SUKSES");
@@ -825,7 +786,7 @@ FUNCTION PEMBAYARAN RAIZE
 
     Yang pertama adalah Brand Toyota
      */
-    static void Toyota(){
+    public static void Toyota(){
         Scanner input = new Scanner(System.in);
         System.out.print("masukan kisaran harga mobil yang diinginkan : ");
         int inputHarga = input.nextInt();
@@ -895,23 +856,25 @@ FUNCTION PEMBAYARAN RAIZE
     }
 
     /*
-    di bawah ini Brand Honda
-     */
-    static void Honda(){
+        UNIT TEST HONDA
+
+
+
+    static class testHonda{
+        public static void main(String[] args) {
+            var getHonda = new Honda();
+            getHonda.priceMobil();
+        }
+
 
     }
 
-    /*
-    di bawah ini Brand Bmw
-     */
-    static void Bmw(){
-
-    }
+    */
 
     /*
     DI BAWAH INI ADALAH MAIN PROGRAMNYA
 
-     */
+    */
 
     public static void main(String[] args) {
         Showroom brand = new Showroom() {
@@ -929,9 +892,10 @@ FUNCTION PEMBAYARAN RAIZE
                 if (inputBrand == 1){
                     Toyota();
                 } else if (inputBrand == 2) {
-                    Honda();
+                    Honda honda =new Honda();
+                    honda.priceMobil();
                 } else if (inputBrand == 3) {
-                    Bmw();
+                    //BMW
                 }
             }
         };
