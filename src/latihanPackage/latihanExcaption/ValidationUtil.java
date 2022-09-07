@@ -19,6 +19,7 @@ public class ValidationUtil {
         }
     }
 
+    /*
     public static void validateNasabah(ShowroomApp loginRequest)throws ValidationExcaption,NullPointerException{
         if (loginRequest.getUsername()==null){
             throw new ValidationExcaption("USERNAME IS NULL");
@@ -30,6 +31,7 @@ public class ValidationUtil {
             throw new ValidationExcaption("PASSWORD IS BLANK");
         }
     }
+    */
 
     /*
     ini untuk error RuntimeExcaption
