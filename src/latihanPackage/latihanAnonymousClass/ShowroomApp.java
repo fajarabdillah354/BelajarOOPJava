@@ -881,9 +881,9 @@ FUNCTION PEMBAYARAN RAIZE
 
             public void mobil() {
                 System.out.println(" daftar brand mobil yang tersedia ");
-                System.out.println("1. Toyota");
-                System.out.println("2. Honda");
-                System.out.println("3. Bmw");
+                System.out.println("1. Toyota".toUpperCase());
+                System.out.println("2. Honda".toUpperCase());
+                System.out.println("3. Bmw".toUpperCase());
                 Scanner input = new Scanner(System.in);
                 System.out.print(
                         "masukan Brand yang anda inginkan : "
@@ -895,7 +895,8 @@ FUNCTION PEMBAYARAN RAIZE
                     Honda honda =new Honda();
                     honda.priceMobil();
                 } else if (inputBrand == 3) {
-                    //BMW
+                    Bmw bmw = new Bmw();
+                    bmw.priceMobil();
                 }
             }
         };
