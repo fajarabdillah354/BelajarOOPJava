@@ -876,14 +876,118 @@ FUNCTION PEMBAYARAN RAIZE
 
     */
 
+    public static String[] brandMobil = new String[5];
+
+    public static void menampilkanBrand(){
+        System.out.println("***** DAFTAR BRAND MOBIL YANG TERSEDIA *****");
+        for (var i = 0 ; i< brandMobil.length;i++) {
+            var brand = brandMobil[i];
+            var no = i + 1;
+            if (brand != null) {
+                System.out.println(no + ". " + brand);
+            }
+        }
+    }
+
+    /*
+    test menampilkan brandMobil
+     */
+    public static void testMenampilkanBrand(){
+        brandMobil[1] = "TOYOTA";
+        brandMobil[2] = "HONDA";
+        brandMobil[3] = "BMW";
+        menampilkanBrand();
+    }
+
+    public static void menambahBrand(String merekMobil){
+        //pengecekan apakah branMobil sudah penuh
+        var isFull = true;
+        for (var i =0;i< brandMobil.length;i++){
+            if (brandMobil[i] == null){
+                isFull = false;
+                break;
+            }
+        }
+
+        // meresize jika brandMobil sudah penuh
+        if (isFull){
+            var temp = brandMobil;
+            brandMobil = new String[brandMobil.length * 2];
+            for (var i = 0;i< temp.length;i++){
+                brandMobil[i] = temp[i];
+            }
+        }
+
+        //tambahkan barang jika masih ada yang kosong
+        for (var i =0;i< brandMobil.length;i++){
+            if (brandMobil[i] == null){
+                brandMobil[i] = merekMobil;
+                break;
+            }
+        }
+
+
+
+    }
+
+
+    /*
+    test menambah brandMobil
+     */
+    public static void testMenambahBrand(){
+        for (var i = 0;i< 30;i++){
+            menambahBrand("brand ke - "+i);
+        }
+        menampilkanBrand();
+    }
+
+
+    /*
+    menghapus brandMobil
+     */
+
+    public static boolean hapusBrand(int nomor){
+        if ((nomor-1)>=brandMobil.length){
+            return false;
+        } else if (brandMobil[nomor-1] == null) {
+            return false;
+        }else {
+            for (var i = (nomor - 1); i < brandMobil.length; i++) {
+                if (i == (brandMobil.length - 1)) {
+                    brandMobil[i] = null;
+                } else {
+                    brandMobil[i] = brandMobil[i + 1];
+                }
+            }
+        }
+        return true;
+    }
+
+    /*
+    test hapusBrandMobil
+     */
+
+    public static void testHapusBrand(){
+        menambahBrand("TOYOTA");
+        menambahBrand("HONDA");
+        menambahBrand("BMW");
+        menambahBrand("LAMBORGINI");
+        menambahBrand("FERRARI");
+        menampilkanBrand();
+        var hapus = hapusBrand(4);
+        System.out.println(hapus);
+        menampilkanBrand();
+
+    }
     public static void main(String[] args) {
+
         Showroom brand = new Showroom() {
 
             public void mobil() {
-                System.out.println(" daftar brand mobil yang tersedia ");
-                System.out.println("1. Toyota".toUpperCase());
-                System.out.println("2. Honda".toUpperCase());
-                System.out.println("3. Bmw".toUpperCase());
+                menambahBrand("TOYOTA");
+                menambahBrand("HONDA");
+                menambahBrand("BMW");
+                menampilkanBrand();
                 Scanner input = new Scanner(System.in);
                 System.out.print(
                         "masukan Brand yang anda inginkan : "
@@ -901,8 +1005,10 @@ FUNCTION PEMBAYARAN RAIZE
             }
         };
         brand.mobil();
-    }
 
+
+
+    }
 
 
 
