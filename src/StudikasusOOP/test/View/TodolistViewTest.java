@@ -9,7 +9,7 @@ import src.StudikasusOOP.View.TodolistView;
 public class TodolistViewTest {
 
   public static void main(String[] args) {
-    testAddTodolist();
+    testRemoveTodolist();
 
   }
 
@@ -34,6 +34,29 @@ public class TodolistViewTest {
     todolistService.showTodolist();
     todolistView.addTodolist();
     todolistService.showTodolist();
+
+  }
+
+  public static void testRemoveTodolist(){
+    TodolistRepository todolistRepository = new TodolistRepositoryImpl();
+    TodolistService todolistService = new TodolistSercviceIMPL(todolistRepository);
+    TodolistView todolistView = new TodolistView(todolistService);
+
+    todolistView.addTodolist();
+    todolistService.showTodolist();
+
+    todolistView.addTodolist();
+    todolistService.showTodolist();
+
+    todolistView.addTodolist();
+    todolistService.showTodolist();
+
+    todolistView.addTodolist();
+    todolistService.showTodolist();
+
+    todolistView.removeTodolist();
+    todolistService.showTodolist();
+
   }
 
 }
