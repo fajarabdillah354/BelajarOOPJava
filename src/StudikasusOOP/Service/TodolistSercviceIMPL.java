@@ -31,7 +31,7 @@ public class TodolistSercviceIMPL implements TodolistService {
     public void addTodolist(String todo) {
         Todolist todolist = new Todolist(todo);
         todolistRepository.add(todolist);
-        System.out.println("sukses menambah "+todo);
+        System.out.println("sukses menambah : "+todo);
     }
 
     @Override
