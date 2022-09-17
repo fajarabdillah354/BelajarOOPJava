@@ -11,6 +11,10 @@ public class Todolist {
         this.todo = todo;
     }
 
+
+    /*
+    Getter dan Setter
+     */
     public String getTodo() {
         return todo;
     }
