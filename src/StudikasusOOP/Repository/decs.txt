@@ -1,0 +1,3 @@
+* Repository adalah tempat menaruh data2 di dalamnya termasuk DBMS(DATABASSE)
+* Logic aplication juga ada di dalam Repo
+
